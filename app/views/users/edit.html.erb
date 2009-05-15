@@ -1,0 +1,10 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%- field_set_tag do -%>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Update' %> - or - <%= link_to 'Back', account_path %>
+    </p>
+  <%- end -%>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Please sign in</h1>
+
+<% form_for(@user_session, :url => user_session_path) do |f| %>
+  <%- field_set_tag do -%>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Login' %>
+    </p>
+  <%- end -%>
+<% end %>

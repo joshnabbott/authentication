@@ -1,0 +1,22 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name first</th>
+    <th>Name last</th>
+    <th>Login</th>
+    <th>Email address</th>
+    <th>Login count</th>
+    <th>Failed login count</th>
+    <th>Last request at</th>
+    <th>Current login at</th>
+    <th>Last login at</th>
+    <th>Current login ip</th>
+    <th>Last login ip</th>
+  </tr>
+  <%= render @users %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>
