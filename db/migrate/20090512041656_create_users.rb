@@ -1,22 +1,9 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :name_first
-      t.string :name_last
-      t.string :login
-      t.string :email_address
-      t.string :crypted_password
-      t.string :password_salt
-      t.string :persistence_token
-      t.string :single_access_token
-      t.string :perishable_token
-      t.integer :login_count
-      t.integer :failed_login_count
-      t.datetime :last_request_at
-      t.datetime :current_login_at
-      t.datetime :last_login_at
-      t.string :current_login_ip
-      t.string :last_login_ip
+      t.string :name_first, :name_last, :login, :email_address, :crypted_password, :password_salt, :persistence_token, :single_access_token, :perishable_token, :current_login_ip, :last_login_ip
+      t.integer :login_count, :failed_login_count
+      t.datetime :last_request_at, :current_login_at, :last_login_at
 
       t.timestamps
     end
@@ -24,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
     add_index :users, :login
     add_index :users, :persistence_token
     add_index :users, :last_request_at
+    add_index :users, :email_address
   end
 
   def self.down
